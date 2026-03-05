@@ -1,0 +1,10 @@
+Nombre de la función: sincronizar_señales
+
+Descripción:
+Dadas dos series temporales que representan la misma señal física capturada por dos sensores diferentes, estas presentan un desfase temporal (offset). El objetivo es encontrar el desplazamiento entero `k` que debe aplicarse a la `señal_b` para maximizar su correlación de Pearson con la `señal_a`.
+
+Argumentos:
+- df: Un pandas.DataFrame con las columnas ['timestamp', 'señal_a', 'señal_b'].
+
+Valor de retorno:
+- Un número entero (int) que representa el offset `k`. Un valor positivo indica que la `señal_b` está retrasada respecto a la `señal_a` (es decir, `señal_b.shift(k)` se alinea con `señal_a`). Se debe buscar el offset en un rango de +/- 20 posiciones.

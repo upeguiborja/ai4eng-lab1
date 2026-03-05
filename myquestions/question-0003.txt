@@ -1,0 +1,12 @@
+Nombre de la función: propagar_etiquetas_semi_supervisadas
+
+Descripción:
+En muchos escenarios de ciencia de datos, etiquetar todos los ejemplos es costoso, resultando en datasets donde solo una pequeña fracción de los datos tiene etiquetas conocidas. El objetivo es utilizar un algoritmo de aprendizaje semi-supervisado (Label Spreading) para propagar las etiquetas existentes al resto de los datos no etiquetados (marcados con -1), basándose en la estructura de similitud de las características.
+
+Argumentos:
+- X: Un array de numpy o pandas.DataFrame de forma (n_muestras, n_caracteristicas).
+- y: Un array de numpy con las etiquetas (0, 1) y el valor -1 para indicar datos no etiquetados.
+- kernel: Una cadena de texto ('knn' o 'rbf') que define el kernel de afinidad.
+
+Valor de retorno:
+- Un array de numpy con las etiquetas finales (0 o 1) para todas las muestras, tras haber completado la propagación.

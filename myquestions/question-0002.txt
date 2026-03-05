@@ -1,0 +1,10 @@
+Nombre de la función: agregar_datos_sensores
+
+Descripción:
+Dada una serie de tiempo de lecturas de sensores con una frecuencia irregular y posibles valores nulos (NaNs), se debe re-muestrear la serie a intervalos fijos de 15 minutos. Para cada intervalo, se debe calcular el promedio (mean) tanto de 'valor_sensor' como de 'energia_consumida'. Los intervalos resultantes que no contengan datos originales (filas en el DataFrame de entrada) deben ser eliminados del DataFrame final.
+
+Argumentos:
+- df: Un pandas.DataFrame con las columnas ['timestamp', 'id_sensor', 'valor_sensor', 'energia_consumida'].
+
+Valor de retorno:
+- Un pandas.DataFrame re-muestreado cada 15 minutos con las columnas ['valor_sensor', 'energia_consumida'], donde el índice es el timestamp del intervalo. Se debe usar la media para ambas columnas. No debe haber filas para intervalos que no tenían datos en el DataFrame original.

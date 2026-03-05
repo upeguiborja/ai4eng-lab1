@@ -1,0 +1,13 @@
+Nombre de la función: seleccionar_caracteristicas_por_permutacion
+
+Descripción:
+La importancia de características basada en la impureza de Gini (por defecto en Random Forest) puede estar sesgada hacia variables con alta cardinalidad. Una técnica más robusta es la "Importancia de Permutación", que mide cuánto disminuye el desempeño del modelo al barajar aleatoriamente los valores de una sola característica. El objetivo es identificar las características más importantes basándose en esta técnica.
+
+Argumentos:
+- modelo: Un estimador de sklearn ya entrenado (ej. RandomForestClassifier).
+- X_val: Un pandas.DataFrame con los datos de validación.
+- y_val: Un pandas.Series o array de numpy con las etiquetas de validación.
+- top_k: Un número entero que indica cuántas características se deben retornar.
+
+Valor de retorno:
+- Una lista de strings con los nombres de las `top_k` características que obtuvieron la mayor importancia media (mean importance) tras realizar la permutación.
